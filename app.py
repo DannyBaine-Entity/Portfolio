@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -6,19 +6,19 @@ app = Flask(__name__)
 def index():
     return render_template('portfolio.html')
 
-app.route('/portfolio', methods=['GET'])
+@app.route('/portfolio', methods=['GET'])
 def portfolio():
     return render_template('portfolio.html')
 
-app.route('/experience', methods=['GET'])
+@app.route('/experience', methods=['GET'])
 def experience():
     return render_template('experience.html')
 
-app.route('/contact', methods=['GET'])
+@app.route('/contact', methods=['GET'])
 def contact():
     return render_template('contact.html')
 
-app.route('/skills', methods=['GET'])
+@app.route('/skills', methods=['GET'])
 def skills():
     return render_template('skills.html')
 
